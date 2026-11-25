@@ -1,0 +1,17 @@
+=== Инструкции по сборке APK ===
+
+1. Создать keystore для подписи:
+   keytool -genkey -v -keystore release.keystore \
+     -keyalg RSA -keysize 2048 -validity 10000 \
+     -alias workdesk -storepass password -keypass password
+
+2. Собрать подписанный APK:
+   flutter build apk --release
+
+3. Собрать App Bundle (рекомендуется):
+   flutter build appbundle --release
+
+4. Файлы находятся в:
+   - APK: build/app/outputs/flutter-apk/app-release.apk
+   - AAB: build/app/outputs/bundle/release/app-release.aab
+
